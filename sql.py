@@ -1,0 +1,16 @@
+import sqlite3 as lite
+con=lite.connect('mtica.db')
+cur=con.cursor()
+cur.execute("DROP TABLE IF EXISTS Cars")
+cur.execute(''' CREATE TABLE Cars(Id INT, Name TEXT, PRICE INT)''')
+print("table cars create. ")
+cur.execute("INSERT INTO Cars VALUES(1,'AUDI',54685541)")
+cur.execute("INSERT INTO Cars VALUES(2,'BUDI',354685541)")
+cur.execute("INSERT INTO Cars VALUES(3,'CUDI',254685541)")
+cur.execute("INSERT INTO Cars VALUES(4,'DUDI',154685541)")
+cur.execute("INSERT INTO Cars VALUES(5,'EUDI',454685541)")
+cur.execute("INSERT INTO Cars VALUES(6,'FUDI',554685541)")
+cur.execute("INSERT INTO Cars VALUES(7,'GUDI',654685541)")
+
+con.commit()
+print("values in the table  Cars inserted")
