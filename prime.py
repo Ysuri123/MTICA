@@ -1,17 +1,19 @@
-def primeornot(num):
-    if num<1:
-        return 0
-    if num==1 or num==2 or num==3:
-        return num
-    for i in range(2,num):
-        if num%i==0:
-            return 0
-    return num
-lst=[]
-first=int(input("enter the first num:"))
-last=int(input("enter the last number:"))
-for i in range(first,last+1):
-    if primeornot(i):
-        lst.append(i)
-print(*lst)
-print(len(lst))
+a=int(input())
+
+from math import sqrt
+def checkPrime(n):
+    if n==1 or n==2 or n==3:
+        return n
+    for i in range(2,int(sqrt(n))+1):
+        if n%i ==0:
+            return None
+    return n
+def findPrimeFactor(n):
+    temp=[]
+    for i in range(1,n+1):
+        if n%i==0:
+            if checkPrime(i):
+                temp.append(i)
+
+    return temp
+print(*findPrimeFactor(a))
